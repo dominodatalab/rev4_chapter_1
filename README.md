@@ -8,7 +8,7 @@ This reference project shows how to use OpenAI's LLM to do Q&A over information 
 
 * [OpenAI_QA_FAISS.ipynb](OpenAI_QA_FAISS.ipynb) : This file loads a PDF, converts it to embeddings, stores the embeddings locally using a FAISS index, runs the semantic search against the embeddings, constructs a prompt and calls OpenAI's models to get a response. You will need your OpenAPI key to be set in the environment for this example.
 
-* [faiss_ddl_doc_store.pkl](faiss_store.pkl) : This file contains the FAISS embeddings of [Domino's documentation](https://docs.dominodatalab.com/) and [Zendesk articles] (https://tickets.dominodatalab.com/hc/en-us/categories/360005759691-Product-Areas) . 
+* [faiss_ddl_doc_store.pkl](faiss_store.pkl) : This file contains the FAISS embeddings of [Domino's documentation](https://docs.dominodatalab.com/) and [Zendesk articles](https://tickets.dominodatalab.com/hc/en-us/categories/360005759691-Product-Areas) . 
 
 * [faiss_etf_doc_store.pkl](faiss_store.pkl) : This file contains the FAISS embeddings of Vanguard's Select Global Value Fund ETF report .
 
