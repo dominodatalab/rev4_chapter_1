@@ -16,7 +16,7 @@ This reference project shows how to use OpenAI's LLM to do Q&A over information 
 
 * [app.py](app.py) : Streamlit app code for the Q&A chatbot. 
 
-* [Select_Global_Value_Fund.pdf](ETF_Docs/Select_Global_Value_Fund.pdf) : A report that can be used as an example for the flow that has been described above in case you want to compute embeddings on a fresh document
+* [ETF_Dosc/Select_Global_Value_Fund.pdf](ETF_Docs/Select_Global_Value_Fund.pdf) : A report that can be used as an example for the flow that has been described above in case you want to compute embeddings on a fresh document
 
 ## Setup instructions
 
