@@ -22,7 +22,7 @@ This reference project shows how to use OpenAI's LLM to do Q&A over information 
 
 This project requires the following [compute environments](https://docs.dominodatalab.com/en/latest/user_guide/f51038/environments/) to be present:
 
-### PromptEngineering
+### Rev4_Chapter_1
 **Environment Base** 
 
 `Domino Standard Environment Py3.9 R4.2`
