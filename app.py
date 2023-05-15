@@ -39,6 +39,9 @@ def get_chain(vectorstore, model, openai_api_key):
     qa_chain = None
     llm = None
     
+    if openai_api_key is None:
+        openai_api_key = os.getenv('OPENAI_API_KEY')
+    
     if model and openai_api_key:
         llm = get_chat_llm(model, openai_api_key)
 
