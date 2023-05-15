@@ -88,7 +88,9 @@ if 'total_tokens' not in st.session_state:
     st.session_state['total_tokens'] = []
 
 st.set_page_config(initial_sidebar_state='collapsed')
-openai_key = st.sidebar.text_input("Enter your OpenAI API key", type="password")
+# Uncomment if you want to get the key from the user
+# openai_key = st.sidebar.text_input("Enter your OpenAI API key", type="password")
+openai_key = os.getenv('OPENAI_API_KEY') 
 model_name = st.sidebar.radio("Choose a model:", ("GPT-3.5", "GPT-4"))
 docs_source = st.sidebar.radio("Choose a store:", ("ETF", "DDL Docs"))
 clear_button = st.sidebar.button("Clear Conversation", key="clear")
