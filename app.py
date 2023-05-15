@@ -20,9 +20,6 @@ from streamlit_chat import message
 
 
 def get_chat_llm(model,openai_api_key):
-    
-    if openai_api_key is None:
-        openai_api_key = os.getenv('OPENAI_API_KEY')
         
     if model and openai_api_key:
         if model and model == "GPT-3.5":
@@ -39,7 +36,7 @@ def get_chain(vectorstore, model, openai_api_key):
     qa_chain = None
     llm = None
     
-    if openai_api_key is None:
+    if openai_api_key is None or not openai_api_key or openai_api_key == "":
         openai_api_key = os.getenv('OPENAI_API_KEY')
     
     if model and openai_api_key:
