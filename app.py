@@ -21,6 +21,9 @@ from streamlit_chat import message
 
 def get_chat_llm(model,openai_api_key):
     
+    if openai_api_key is None:
+        openai_api_key = os.getenv('OPENAI_API_KEY')
+        
     if model and openai_api_key:
         if model and model == "GPT-3.5":
             llm = ChatOpenAI(temperature=0,openai_api_key=openai_api_key,model_name='gpt-3.5-turbo')
@@ -68,9 +71,6 @@ Answer in Markdown:"""
 
 QA_PROMPT = PromptTemplate(template=template, input_variables=["question", "context"])
 
-# Uncomment if you want to store and use the OpenAI key stored in an environment variable
-# OPENAI_API_KEY = os.getenv('OPENAI_API_KEY') 
-
 
 
 
@@ -89,8 +89,7 @@ if 'total_tokens' not in st.session_state:
 
 st.set_page_config(initial_sidebar_state='collapsed')
 # Uncomment if you want to get the key from the user
-# openai_key = st.sidebar.text_input("Enter your OpenAI API key", type="password")
-openai_key = os.getenv('OPENAI_API_KEY') 
+openai_key = st.sidebar.text_input("Enter your OpenAI API key", type="password") 
 model_name = st.sidebar.radio("Choose a model:", ("GPT-3.5", "GPT-4"))
 docs_source = st.sidebar.radio("Choose a store:", ("ETF", "DDL Docs"))
 clear_button = st.sidebar.button("Clear Conversation", key="clear")
@@ -116,7 +115,8 @@ if clear_button:
     memory.clear()
 
 
-if store and openai_key:
+# if store and openai_key:
+if store: 
     qa = get_chain(store, model_name, openai_key)
 
 
