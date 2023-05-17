@@ -59,8 +59,8 @@ Standalone question:"""
 
 CONDENSE_QUESTION_PROMPT = PromptTemplate.from_template(_template)
 
-template = """You are a friendly AI assistant for answering questions about information in health care policy documentation.
-You are given the following extracted parts of a long document and a question. Provide a conversational answer.
+template = """You are an AI assistant for answering questions about employee benefits in health care policy documentation.
+You are given the following extracted parts of a long document and a question. 
 If you don't know the answer, just say "Hmm, I'm not sure." Don't try to make up an answer.
 If the question is not about employee benefits or policy coverage, politely inform them that you are tuned to only answer questions pertaining to policy coverage.
 Question: {question}
@@ -145,5 +145,5 @@ with container:
             for i in range(len(st.session_state['generated'])):
                 message(st.session_state["past"][i], is_user=True, logo='https://freesvg.org/img/1367934593.png', key=str(i) + '_user')
                 message(st.session_state["generated"][i], logo='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk6e8aarUy37BOHMTSk-TUcs4AyAy3pfAHL-F2K49KHNEbI0QUlqWJFEqXYQvlBdYMMJA&usqp=CAU', key=str(i))
-                if 'total_tokens' in st.session_state and len(st.session_state['total_tokens']) > 0:
-                    st.write(f"Number of tokens: {st.session_state['total_tokens'][i]}")
+                #if 'total_tokens' in st.session_state and len(st.session_state['total_tokens']) > 0:
+                #    st.write(f"Number of tokens: {st.session_state['total_tokens'][i]}")
