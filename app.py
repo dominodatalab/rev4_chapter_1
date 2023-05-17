@@ -59,10 +59,10 @@ Standalone question:"""
 
 CONDENSE_QUESTION_PROMPT = PromptTemplate.from_template(_template)
 
-template = """You are a friendly AI assistant for answering questions about information in Vanguards ETF documentation or Domino Data Labs product.
+template = """You are a friendly AI assistant for answering questions about information in health care policy documentation.
 You are given the following extracted parts of a long document and a question. Provide a conversational answer.
 If you don't know the answer, just say "Hmm, I'm not sure." Don't try to make up an answer.
-If the question is not about investments, economics, finance, data science, AI or ML or MLOps or related to Vanguard or Domino Data Lab, politely inform them that you are tuned to only answer questions about a few areas.
+If the question is not about employee benefits or policy coverage, politely inform them that you are tuned to only answer questions pertaining to policy coverage.
 Question: {question}
 =========
 {context}
@@ -91,14 +91,14 @@ st.set_page_config(initial_sidebar_state='collapsed')
 # Uncomment if you want to get the key from the user
 openai_key = st.sidebar.text_input("Enter your OpenAI API key", type="password") 
 model_name = st.sidebar.radio("Choose a model:", ("GPT-3.5", "GPT-4"))
-docs_source = st.sidebar.radio("Choose a store:", ("ETF", "DDL Docs"))
+docs_source = st.sidebar.radio("Choose a store:", ("Health Care Policy", "DDL Docs"))
 clear_button = st.sidebar.button("Clear Conversation", key="clear")
 
 
 store = None 
-if docs_source == "ETF":
+if docs_source == "Health Care Policy":
     # Load the embeddings from the pickle file; change the location if needed
-    with open("faiss_etf_doc_store.pkl", "rb") as f:
+    with open("healthcareplandetails.pkl", "rb") as f:
         store = pickle.load(f)
 elif docs_source == "DDL Docs":
     with open("faiss_ddl_doc_store.pkl", "rb") as f:
