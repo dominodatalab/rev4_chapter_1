@@ -96,7 +96,7 @@ clear_button = st.sidebar.button("Clear Conversation", key="clear")
 
 
 store = None 
-if docs_source == "Health Care Policy":
+if docs_source == "Employee Benefits":
     # Load the embeddings from the pickle file; change the location if needed
     with open("healthcareplandetails.pkl", "rb") as f:
         store = pickle.load(f)
