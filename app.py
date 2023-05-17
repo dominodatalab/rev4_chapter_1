@@ -91,7 +91,7 @@ st.set_page_config(initial_sidebar_state='collapsed')
 # Uncomment if you want to get the key from the user
 openai_key = st.sidebar.text_input("Enter your OpenAI API key", type="password") 
 model_name = st.sidebar.radio("Choose a model:", ("GPT-3.5", "GPT-4"))
-docs_source = st.sidebar.radio("Choose a store:", ("Health Care Policy", "DDL Docs"))
+docs_source = st.sidebar.radio("Choose a store:", ("Employee Benefits", "DDL Docs"))
 clear_button = st.sidebar.button("Clear Conversation", key="clear")
 
 
